@@ -1,0 +1,13 @@
+[Unit]
+Description=calebasse
+After=postgresql.service
+
+[Service]
+Type=simple
+User=calebasse
+Group=calebasse
+ExecStart=/opt/calebasse/venv/bin/python3 /opt/calebasse/odoo/odoo-bin -c /opt/calebasse/odoo.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
